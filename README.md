@@ -77,3 +77,58 @@ def home():
         "If a `GET` request comes to `/`, execute the `home()` function."
 * `@app.get("/)` is a **decorator factory** that returns a decorater to register the function
  with the given route.
+
+---
+
+### HTTP Methods
+#### GET Request
+
+**Purpose**:Retrieve (Read) data from the server.
+
+```
+Client  -------- GET Request -------->  Server
+Client  <------- Requested Data ------ Server
+```
+Example:
+
+* Get all users
+* Get a single post
+* Get product details
+
+`A Get Request usually does not create or modifiy data`
+
+---
+#### POST Request
+
+**Purpose**:Send new data to the server to create a resource.
+
+```
+Client  -------- POST + JSON Body -------->  Server
+Client  <------- Success / Created ------ Server
+```
+Example:
+
+* Create a new user
+* Publish a new post
+* Register a new account 
+
+`THe data is sent inside the **Request Body** as JSON`
+
+Example:
+
+```
+{
+    "name":"Ali",
+    "age":28,
+    "bio",{
+        "city":"Lahore"
+    }
+}
+
+```
+
+In real-world application, this JSON is genetated by the *frontend*(React,Next.js,Mobile App etc) from user input. 
+During backend development, Postman acts as a fake frontend, allowing us to manually send the same JSON to test our API.
+
+
+--- 

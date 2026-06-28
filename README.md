@@ -50,3 +50,30 @@ uv add fastapi[all]
 
 
 ---
+
+## FastAPI Basics
+### Creating a FastAPI Application
+```
+from fastapi import FastAPI
+
+app = FastAPI()
+```
+* `FastAPI()` creates the application instance.
+* Think of app as the *entry point* of the backend.
+* Every incoming HTTP request first reaches this `app` instance.
+
+---
+### Creating API Endpoints
+
+
+```
+@app.get('/')
+def home():
+    return {"message":"hello backend with fastapi"}
+
+```
+* `@app.get("/")` register the a **Get endpoint**.
+* It tells FastAPI:
+        "If a `GET` request comes to `/`, execute the `home()` function."
+* `@app.get("/)` is a **decorator factory** that returns a decorater to register the function
+ with the given route.
